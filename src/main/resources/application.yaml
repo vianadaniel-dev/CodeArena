@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: CodeArena
+  datasource:
+    url: jdbc:postgresql://localhost:5433/codearena_db
+    username: admin
+    password: adminpassword
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true

@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: codearena-postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: codearena_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - codearena-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: codearena-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@codearena.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - codearena-network
+
+volumes:
+  postgres_data:
+
+networks:
+  codearena-network:
+    driver: bridge
