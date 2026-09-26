@@ -13,19 +13,6 @@ services:
     networks:
       - codearena-network
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: codearena-pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@codearena.com
-      PGADMIN_DEFAULT_PASSWORD: adminpassword
-    ports:
-      - "5050:80"
-    depends_on:
-      - postgres
-    networks:
-      - codearena-network
-
 volumes:
   postgres_data:
 

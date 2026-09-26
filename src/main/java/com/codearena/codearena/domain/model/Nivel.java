@@ -1,10 +1,10 @@
 package com.codearena.codearena.domain.model;
 
 public enum Nivel {
-    Rookie,
-    Junior,
-    Developer,
-    Senior,
-    Master,
-    Legend
+    ROOKIE,
+    JUNIOR,
+    DEVELOPER,
+    SENIOR,
+    MASTER,
+    LEGEND
 }
